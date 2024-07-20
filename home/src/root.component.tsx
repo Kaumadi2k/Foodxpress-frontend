@@ -1,10 +1,22 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Box, Button, Card, CardContent, CardMedia, Grid, InputAdornment, TextField, ThemeProvider, Typography } from "@mui/material";
 import { Search } from "@mui/icons-material";
 import theme from "./theme";
 import Product from "./components/Product";
+import { listCategory } from "./services/ProductService";
 
 const Home = () => {
+  
+  const[category, setCategroy] = useState([]);
+
+  useEffect(()=>{
+    listCategory().then((response)=>{
+      setCategroy(response.data);
+    }).catch(error=>{
+      console.error(error);
+    })
+  }, [])
+  
   return (
     <ThemeProvider theme={theme}>
     <div className='homeContent'>
@@ -45,7 +57,36 @@ const Home = () => {
       </Grid>
     </Grid>
 
-    <Grid container spacing={0} className='productContainer'>
+    <Grid container spacing={1} marginLeft={0} justifyContent='space-around' marginBottom='20px'>
+      {category.map((category)=>
+        <Grid item  style={{cursor:'pointer' }}>
+          <Box className="boxContainer" 
+            display={"flex"}
+            flexDirection={"column"}
+            justifyContent={"space-evenly"}
+            alignContent={"center"}
+            marginTop={"20px"}>
+            <img
+              src={category.imgUrl}
+              className='categoryImage'
+              style={{
+                borderRadius:'50%',
+                width:'100%',
+                maxWidth:'150px',
+                height:'100%',
+                maxHeight:'150px',
+                boxShadow:'0 0 10px rgba(0,0,0,0.5)'
+              }}
+            />
+            <Typography variant="subtitle1" align="center" mt={2} className='categoryName'>
+              {category.categoryName}
+            </Typography>
+          </Box>
+        </Grid>
+      )}
+    </Grid>
+
+    <Grid container spacing={0} className='productContainer' justifyContent={'space-between'} marginLeft={'20px'}>
       <Product />
     </Grid>
     

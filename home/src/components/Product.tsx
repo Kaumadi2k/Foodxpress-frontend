@@ -16,9 +16,9 @@ useEffect(()=>{
 
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} justifyContent={'space-between'}>
     {product.map(product =>(
-    <Grid item style={{display:'flex',alignItems:'center', border:'2px solid #EC6021', borderRadius:'5px', margin:'4px'}}>
+    <Grid item style={{display:'flex',alignItems:'center', border:'2px solid #EC6021', borderRadius:'5px', margin:'4px', paddingLeft:'0px'}}>
     <Card style={{width:'300px',boxShadow:'none'}}>
       <CardMedia
         component="img"
@@ -28,7 +28,7 @@ useEffect(()=>{
         image={product.imgUrl}
       />
   
-      <CardContent style={{ backgroundColor: '#EC6021', height: '120px',overflow: 'hidden', color:'white' }}>
+      <CardContent style={{ backgroundColor: '#EC6021', height: '120px',overflow: 'hidden', color:'white'}}>
         <Typography variant="h5" component="h2">
           {product.name}
         </Typography>
