@@ -1,0 +1,33 @@
+.Navbar{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo{
+  width: 15%;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+}
+
+li{
+  padding: 20px;
+  font-size: large;
+}
+
+button{
+  padding: 10px 30px;
+  background-color: #FE5A36;
+  color: white;
+  border-style: none;
+  border-radius: 50px;
+  font-size: large;
+  cursor: pointer;
+}
