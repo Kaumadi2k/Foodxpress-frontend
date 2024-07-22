@@ -13,10 +13,10 @@ const Navbar = () => {
       <img src={require('./logo2.png')} className='logo' alt="Logo" />
       <div className="contents">
         <ul>
-          <li>Home</li>
+          <a href='/'><li>Home</li></a>
           <li>About Us</li>
           <li>Contact Us</li>
-          <li><IconButton aria-label='cart'><ShoppingCartRounded fontSize='large' sx={{color:'black'}}/></IconButton></li>
+          <li><a href='/cart'><IconButton aria-label='cart'><ShoppingCartRounded fontSize='large' sx={{color:'black'}}/></IconButton></a></li>
           <li><Button variant='contained' style={{backgroundColor:'orangered'}}>Login</Button></li>
         </ul>
       </div>

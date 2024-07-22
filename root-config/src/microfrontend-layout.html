@@ -4,12 +4,15 @@
   </div>
 
   <div id="main-content">
+    <route path="cart">
+      <application name="@foodxpress/cart"></application>
+      <application name="@foodxpress/footer"></application>
+    </route>
+
     <route default>
       <application name="@foodxpress/home"></application>
+      <application name="@foodxpress/footer"></application>
     </route>
   </div>
-
-  <div>
-    <application name="@foodxpress/footer"></application>
-  </div>
 </single-spa-router>
+
