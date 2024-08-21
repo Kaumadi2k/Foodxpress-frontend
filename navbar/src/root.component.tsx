@@ -1,10 +1,7 @@
-// export default function Root(props) {
-//   return <Navbar {...props} />;
-// }
-
 import React from 'react'
 import { Button, IconButton } from '@mui/material'
 import { ShoppingCartRounded } from '@mui/icons-material'
+import { navigateToUrl } from 'single-spa'
 import './navbar.css'
 
 const Navbar = () => {
@@ -17,7 +14,7 @@ const Navbar = () => {
           <li>About Us</li>
           <li>Contact Us</li>
           <li><a href='/cart'><IconButton aria-label='cart'><ShoppingCartRounded fontSize='large' sx={{color:'black'}}/></IconButton></a></li>
-          <li><Button variant='contained' style={{backgroundColor:'orangered'}}>Login</Button></li>
+          <li><a href='/auth' onClick={navigateToUrl}><Button variant='contained' style={{backgroundColor:'orangered'}}>Login</Button></a></li>
         </ul>
       </div>
     </div>

@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardMedia, Typography, Grid, IconButton} from '@mui/material';
-import { listProduct } from '../services/ProductService';;
+import { listProduct, listProductByCategory } from '../services/ProductService';;
 import { ShoppingCartRounded } from '@mui/icons-material';
 
-const Product = () => {
+const Product = ({categoryId}) => {
 
 const [product, setProduct] = useState([]);
-useEffect(()=>{
-  listProduct().then((response)=>{
-    setProduct(response.data);
-  }).catch(error=>{
-    console.error(error);
-  })
-}, [])
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const response = categoryId 
+        ? await listProductByCategory(categoryId) 
+        : await listProduct();
+      setProduct(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchProducts();
+}, [categoryId]);
 
 
   return (

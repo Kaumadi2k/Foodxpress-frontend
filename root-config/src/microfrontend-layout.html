@@ -1,15 +1,22 @@
 <single-spa-router>
-  <div>
+  <!-- <div>
     <application name="@foodxpress/navbar"></application>
-  </div>
+  </div> -->
 
   <div id="main-content">
     <route path="cart">
+      <application name="@foodxpress/navbar"></application>
       <application name="@foodxpress/cart"></application>
       <application name="@foodxpress/footer"></application>
     </route>
 
-    <route default>
+    <route path="auth">
+      <application name="@foodxpress/auth"></application>
+      <application name="@foodxpress/footer"></application>
+    </route>    
+    
+    <route default="home" exact>
+      <application name="@foodxpress/navbar"></application>
       <application name="@foodxpress/home"></application>
       <application name="@foodxpress/footer"></application>
     </route>

@@ -10,3 +10,7 @@ export const listCategory = ()=>{
 export const listProduct = ()=>{
   return axios.get(PRODUCT_API_URL);
 }
+
+export const listProductByCategory = (categoryId)=>{
+  return axios.get(`${PRODUCT_API_URL}/byCategory/${categoryId}`);
+}
