@@ -26,7 +26,7 @@ const Home = () => {
         <CardContent sx={{flex:'1 0 auto'}}>
           <Typography variant='h3' gutterBottom color='secondary'>Welcome to FoodXpress</Typography>
           <Typography variant='h5' gutterBottom color='secondary'>Discover Delicousness at your fingertips.</Typography>
-          <Typography variant='subtitle1' gutterBottom color='secondary'>Whether you're craving a gourmet meal, a quick bite, or something in between, FoodXpress brings your favorite dishes from top local restaurants right to you. Enjoy a seamless and delightful food ordering experience with just a few clicks.</Typography>
+          <Typography variant='subtitle1' gutterBottom color='secondary'>Whether you're looking for fresh vegetables, juicy fruits, or pantry staples, FoodXpress brings your favorite supermarket items right to your doorstep. Enjoy a seamless and delightful grocery shopping experience with just a few clicks.</Typography>
           <Button variant='outlined' color='secondary'>Register Now</Button>
         </CardContent>
       </Box>
